@@ -1,4 +1,4 @@
-import { Call, Facebook, Mail } from "@material-ui/icons";
+import { WhatsApp, Facebook, Mail } from "@material-ui/icons";
 import React from "react";
 
 function ContactBar({ className }) {
@@ -10,15 +10,23 @@ function ContactBar({ className }) {
           <p>contacto.inlakechmid@gmail.com</p>
         </div>
 
-        <div className="contactBar__container-option">
+        <a
+          href="https://www.facebook.com/In-Lakech-106384411203100"
+          target="_blank"
+          className="contactBar__container-option"
+        >
           <Facebook />
           <p>In Lak'ech</p>
-        </div>
+        </a>
 
-        <div className="contactBar__container-option">
-          <Call />
+        <a
+          href="https://wa.me/0527351829519?text=¡Hola! Me llamaron la atención tus productos, ¿Puedes darme más información?"
+          target="_blank"
+          className="contactBar__container-option"
+        >
+          <WhatsApp />
           <p>555-555-5555</p>
-        </div>
+        </a>
       </div>
     </div>
   );
