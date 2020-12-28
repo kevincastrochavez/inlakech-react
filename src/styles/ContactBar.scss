@@ -1,0 +1,25 @@
+.contactBar {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+
+  background-color: $light-green;
+
+  &__container {
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+    color: $white;
+
+    &-option {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      & p {
+        font-size: 7px;
+      }
+    }
+  }
+}

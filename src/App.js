@@ -1,7 +1,9 @@
+import ContactBar from "./components/ContactBar";
+
 function App() {
   return (
     <div className="app">
-      <h1>In Lak'ech</h1>
+      <ContactBar className="app__contactBar" />
     </div>
   );
 }
