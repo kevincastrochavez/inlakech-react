@@ -26,3 +26,22 @@
     }
   }
 }
+
+@media only screen and (min-width: 600px) {
+  .contactBar {
+    &__container {
+      &-option {
+        flex-direction: row;
+
+        & svg {
+          font-size: 30px;
+        }
+
+        & p {
+          font-size: 14px;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}
