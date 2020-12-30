@@ -1,0 +1,47 @@
+.carouselItem {
+  height: 182px;
+  position: relative;
+
+  & img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  & h2,
+  & p,
+  & button {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
+
+  & h2 {
+    font-size: 18px;
+  }
+
+  & p {
+    font-size: 10px;
+    margin-top: 30px;
+    width: 220px;
+  }
+
+  & button {
+    margin-top: 90px;
+    border: 2px solid $golden;
+    background-color: $golden;
+    color: #111;
+    padding: 10px;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &__whiteText {
+    & h2,
+    & p {
+      color: $white;
+    }
+  }
+}

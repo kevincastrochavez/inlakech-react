@@ -1,15 +1,15 @@
 import React from "react";
-import { Paper } from "@material-ui/core";
 import { Button } from "@material-ui/core";
 
-function CarouselItem({ title, text }) {
+function CarouselItem({ className, src, alt, title, text, btnText }) {
   return (
-    <Paper>
+    <div className={className}>
+      <img src={src} alt={alt} />
       <h2>{title}</h2>
       <p>{text}</p>
 
-      <Button className="CheckButton">Check it out!</Button>
-    </Paper>
+      <Button className="carouselItem__checkButton">{btnText}</Button>
+    </div>
   );
 }
 
