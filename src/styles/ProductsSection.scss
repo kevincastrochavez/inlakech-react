@@ -1,0 +1,14 @@
+.productsSection {
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 56px;
+
+  &__container {
+    width: 90vw;
+
+    & h1 {
+      margin-bottom: 5px;
+    }
+  }
+}

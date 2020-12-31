@@ -1,0 +1,31 @@
+.productsItem {
+  position: relative;
+  margin-bottom: 13px;
+
+  & img {
+    width: 100%;
+  }
+
+  &__box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    height: 43.5%;
+    width: 40%;
+    background-color: $light-green;
+    border-radius: 2px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & h3 {
+      color: $white;
+      font-weight: 400;
+      line-height: 27px;
+      letter-spacing: 1px;
+    }
+  }
+}
