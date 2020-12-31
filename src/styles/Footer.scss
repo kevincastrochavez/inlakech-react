@@ -1,0 +1,66 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  & img {
+    width: 100%;
+    height: 155px;
+    object-fit: cover;
+  }
+
+  &__container {
+    width: 90vw;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &-info {
+      margin-top: 12px;
+      height: 85px;
+      display: flex;
+      justify-content: space-between;
+
+      &-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        & p {
+          font-size: 10px;
+          line-height: 12px;
+          color: $white;
+        }
+      }
+
+      &-contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &-option {
+          display: flex;
+          align-items: center;
+          color: $white;
+          text-decoration: none;
+
+          & p {
+            width: 50%;
+            font-size: 8px;
+            margin-left: 15px;
+          }
+        }
+      }
+    }
+
+    &-copyright {
+      margin-bottom: 10px;
+
+      & p {
+        color: $white;
+      }
+    }
+  }
+}
