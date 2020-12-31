@@ -1,0 +1,34 @@
+.aboutSection {
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    width: 90vw;
+
+    & h1 {
+      margin: 21px 0px 7px;
+    }
+
+    & p {
+      line-height: 21px;
+      margin-bottom: 23px;
+
+      & span {
+        color: $golden;
+        margin-left: 10px;
+      }
+    }
+
+    &-images {
+      margin-bottom: 61px;
+      display: flex;
+      justify-content: space-between;
+
+      & img {
+        width: 27vw;
+        height: 176px;
+        object-fit: cover;
+      }
+    }
+  }
+}
