@@ -32,7 +32,12 @@ function Caroussel({ className }) {
   ];
 
   return (
-    <Carousel indicators={false} interval={6000} className={className}>
+    <Carousel
+      autoPlay={false}
+      indicators={false}
+      interval={6000}
+      className={`${className} carousel`}
+    >
       {carouselItems.map((item, i) => (
         <CarouselItem
           key={i}
