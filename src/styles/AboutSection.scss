@@ -32,3 +32,29 @@
     }
   }
 }
+
+@media only screen and (min-width: 425px) and (max-width: 768px) {
+  .aboutSection {
+    &__container {
+      &-images {
+        & img {
+          height: 250px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .aboutSection {
+    &__container {
+      width: 90vw;
+
+      &-images {
+        & img {
+          height: 400px;
+        }
+      }
+    }
+  }
+}
