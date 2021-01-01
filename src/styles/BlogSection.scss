@@ -1,0 +1,22 @@
+.blogSection {
+  height: 205px;
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 75px;
+
+  &__container {
+    width: 90vw;
+
+    & h1 {
+      margin-bottom: 8px;
+    }
+
+    &-scroll {
+      display: grid;
+      grid-template-rows: 1;
+      grid-gap: 12px;
+      overflow-x: scroll;
+    }
+  }
+}

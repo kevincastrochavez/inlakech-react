@@ -1,0 +1,36 @@
+.blogItemScroll {
+  grid-row: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid $dark-green;
+  height: 151px;
+  width: 178px;
+
+  &__container {
+    height: 100%;
+    width: 86%;
+
+    & img {
+      margin-top: 13px;
+    }
+
+    & h3 {
+      font-size: 14px;
+      line-height: 21px;
+      margin-bottom: 9px;
+    }
+
+    & p {
+      font-size: 8px;
+      line-height: 12px;
+
+      & span {
+        color: $golden;
+      }
+    }
+  }
+}
