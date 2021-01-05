@@ -8,6 +8,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import { Menu } from "@material-ui/icons";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   list: {
@@ -45,12 +46,14 @@ export default function HamburgerMenu() {
     >
       <List>
         {navItems.map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {<i class={`fas fa-${navIcons[index]}`}></i>}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
+          <Link key={text} to={`${text.toLowerCase()}`}>
+            <ListItem button>
+              <ListItemIcon>
+                {<i class={`fas fa-${navIcons[index]}`}></i>}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          </Link>
         ))}
       </List>
     </div>
