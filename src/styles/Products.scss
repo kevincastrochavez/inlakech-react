@@ -1,0 +1,31 @@
+.products {
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    width: 90vw;
+  }
+}
+
+@media only screen and (min-width: 425px) {
+  .products {
+    &__container {
+      &-section {
+        & h1 {
+          margin-bottom: 15px;
+        }
+
+        &-items {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+
+        &-item {
+          width: 49%;
+          margin-bottom: 25px;
+        }
+      }
+    }
+  }
+}
