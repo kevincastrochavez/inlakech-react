@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function AboutSection({ className }) {
   return (
@@ -10,7 +11,9 @@ function AboutSection({ className }) {
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text
           ever.
-          <span>Ver más...</span>
+          <Link to="/acerca">
+            <span>Ver más...</span>
+          </Link>
         </p>
 
         <div className="aboutSection__container-images">

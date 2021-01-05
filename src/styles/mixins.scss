@@ -1,0 +1,68 @@
+@mixin about {
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    width: 90vw;
+
+    & h1 {
+      margin: 21px 0px 7px;
+    }
+
+    & p {
+      line-height: 21px;
+      margin-bottom: 23px;
+
+      & a {
+        text-decoration: none;
+      }
+
+      & span {
+        color: $golden;
+        margin-left: 10px;
+      }
+    }
+
+    &-images {
+      margin-bottom: 61px;
+      display: flex;
+      justify-content: space-between;
+
+      & img {
+        width: 27vw;
+        height: 176px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@mixin about425 {
+  &__container {
+    & p {
+      line-height: 27px;
+    }
+
+    &-images {
+      & img {
+        height: 250px;
+      }
+    }
+  }
+}
+
+@mixin about769 {
+  &__container {
+    width: 90vw;
+
+    & p {
+      line-height: 27px;
+    }
+
+    &-images {
+      & img {
+        height: 400px;
+      }
+    }
+  }
+}

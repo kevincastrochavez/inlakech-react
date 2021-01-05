@@ -1,15 +1,15 @@
-.aboutSection {
+.about {
   @include about;
 }
 
 @media only screen and (min-width: 425px) and (max-width: 768px) {
-  .aboutSection {
+  .about {
     @include about425;
   }
 }
 
 @media only screen and (min-width: 769px) {
-  .aboutSection {
+  .about {
     @include about769;
   }
 }
