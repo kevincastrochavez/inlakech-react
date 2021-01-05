@@ -1,5 +1,6 @@
 import { Facebook, Mail, WhatsApp } from "@material-ui/icons";
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Footer({ className }) {
   return (
@@ -9,10 +10,21 @@ function Footer({ className }) {
       <div className="footer__container">
         <div className="footer__container-info">
           <div className="footer__container-info-links">
-            <p>Productos</p>
-            <p>Acerca</p>
-            <p>Blog</p>
-            <p>Contacto</p>
+            <Link to="/productos">
+              <p>Productos</p>
+            </Link>
+
+            <Link to="/acerca">
+              <p>Acerca</p>
+            </Link>
+
+            <Link to="/blog">
+              <p>Blog</p>
+            </Link>
+
+            <Link to="/contacto">
+              <p>Contacto</p>
+            </Link>
           </div>
 
           <div className="footer__container-info-contact">
