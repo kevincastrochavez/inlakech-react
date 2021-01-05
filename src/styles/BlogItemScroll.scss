@@ -15,6 +15,9 @@
     width: 86%;
 
     & img {
+      width: 100%;
+      height: 41%;
+      object-fit: cover;
       margin-top: 13px;
     }
 
@@ -30,6 +33,26 @@
 
       & span {
         color: $golden;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .blogItemScroll {
+    height: 200px;
+    width: 235px;
+
+    &__container {
+      & h3 {
+        font-size: 18.5px;
+        line-height: 27.7px;
+        margin-top: 10px;
+      }
+
+      & p {
+        font-size: 10.5px;
+        line-height: 16px;
       }
     }
   }

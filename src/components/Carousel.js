@@ -33,9 +33,9 @@ function Caroussel({ className }) {
 
   return (
     <Carousel
-      autoPlay={false}
       indicators={false}
-      interval={6000}
+      navButtonsAlwaysInvisible={true}
+      interval={5000}
       className={`${className} carousel`}
     >
       {carouselItems.map((item, i) => (

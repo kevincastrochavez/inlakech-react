@@ -4,7 +4,7 @@ function BlogItemScroll({ className }) {
   return (
     <div className={`blogItemScroll ${className}`}>
       <div className="blogItemScroll__container">
-        <img src="https://via.placeholder.com/154x63" alt="" />
+        <img src="https://via.placeholder.com/200x200" alt="" />
 
         <h3>Lorem Ipsum</h3>
 

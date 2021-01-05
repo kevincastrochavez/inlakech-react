@@ -12,3 +12,39 @@
     }
   }
 }
+
+@media only screen and (min-width: 425px) and (max-width: 768px) {
+  .productsSection {
+    &__container {
+      &-items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      &-item {
+        width: 48%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .productsSection {
+    &__container {
+      & h1 {
+        margin-bottom: 15px;
+      }
+
+      &-items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      &-item {
+        width: 30%;
+      }
+    }
+  }
+}
