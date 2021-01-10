@@ -9,7 +9,7 @@ function Homepage({ className }) {
     <div className={`${className}`}>
       <Carousel />
       <AboutSection />
-      <ProductsSection />
+      <ProductsSection title="Nuestros Productos" />
       <BlogSection />
     </div>
   );

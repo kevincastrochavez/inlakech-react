@@ -62,3 +62,31 @@
     }
   }
 }
+
+@mixin products {
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    width: 90vw;
+  }
+}
+
+@mixin products425 {
+  &__container {
+    & h1 {
+      margin-bottom: 15px;
+    }
+
+    &-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    &-item {
+      width: 49%;
+      margin-bottom: 25px;
+    }
+  }
+}

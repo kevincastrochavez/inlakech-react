@@ -1,0 +1,9 @@
+.plants {
+  @include products;
+}
+
+@media only screen and (min-width: 425px) {
+  .plants {
+    @include products425;
+  }
+}

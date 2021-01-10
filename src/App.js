@@ -4,7 +4,10 @@ import NavBar from "./components/NavBar";
 import Homepage from "./components/Homepage";
 import Footer from "./components/Footer";
 import About from "./components/About";
-import Products from "./components/Products";
+import ProductsSections from "./components/ProductsSection";
+import Plants from "./components/Plants";
+import Pots from "./components/Pots";
+import Hangers from "./components/Hangers";
 
 function App() {
   return (
@@ -27,7 +30,25 @@ function App() {
 
         <Switch>
           <Route path="/productos" exact>
-            <Products className="app__products" />
+            <ProductsSections className="app__products" title="Productos" />
+          </Route>
+        </Switch>
+
+        <Switch>
+          <Route path="/productos/plantas">
+            <Plants className="app__products-plants" />
+          </Route>
+        </Switch>
+
+        <Switch>
+          <Route path="/productos/macetas">
+            <Pots className="app__products-pots" />
+          </Route>
+        </Switch>
+
+        <Switch>
+          <Route path="/productos/colgantes">
+            <Hangers className="app__products-hangers" />
           </Route>
         </Switch>
 

@@ -1,0 +1,9 @@
+.pots {
+  @include products;
+}
+
+@media only screen and (min-width: 425px) {
+  .pots {
+    @include products425;
+  }
+}
