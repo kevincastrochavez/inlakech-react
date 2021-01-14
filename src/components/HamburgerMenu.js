@@ -46,7 +46,7 @@ export default function HamburgerMenu() {
     >
       <List>
         {navItems.map((text, index) => (
-          <Link key={text} to={`${text.toLowerCase()}`}>
+          <Link key={text} to={`/${text.toLowerCase()}`}>
             <ListItem button>
               <ListItemIcon>
                 {<i class={`fas fa-${navIcons[index]}`}></i>}
