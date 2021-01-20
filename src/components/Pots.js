@@ -17,7 +17,7 @@ function Pots({ className }) {
           <ProductsItem
             className="pots__container-item"
             url="https://source.unsplash.com/FV_PxCqgtwc"
-            title="Macetas"
+            title="Macetas 2"
           />
         </div>
       </div>
