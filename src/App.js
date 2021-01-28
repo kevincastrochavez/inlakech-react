@@ -4,7 +4,6 @@ import NavBar from "./components/NavBar";
 import Homepage from "./components/Homepage";
 import Footer from "./components/Footer";
 import About from "./components/About";
-// import ProductsSections from "./components/ProductsSection";
 import Plants from "./components/Plants";
 import Pots from "./components/Pots";
 import Hangers from "./components/Hangers";
@@ -21,34 +20,23 @@ function App() {
           <Route path="/" exact>
             <Homepage className="app__homepage" />
           </Route>
-        </Switch>
 
-        <Switch>
           <Route path="/acerca" exact>
             <About className="app__about" />
           </Route>
-        </Switch>
 
-        <Switch>
           <Route path="/productos" exact>
-            {/* <ProductsSections className="app__products" title="Productos" /> */}
             <Products />
           </Route>
-        </Switch>
 
-        <Switch>
           <Route path="/productos/plantas">
             <Plants className="app__products-plants" />
           </Route>
-        </Switch>
 
-        <Switch>
           <Route path="/productos/macetas">
             <Pots className="app__products-pots" />
           </Route>
-        </Switch>
 
-        <Switch>
           <Route path="/productos/colgantes">
             <Hangers className="app__products-hangers" />
           </Route>
