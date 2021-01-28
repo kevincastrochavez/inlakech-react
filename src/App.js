@@ -4,10 +4,11 @@ import NavBar from "./components/NavBar";
 import Homepage from "./components/Homepage";
 import Footer from "./components/Footer";
 import About from "./components/About";
-import ProductsSections from "./components/ProductsSection";
+// import ProductsSections from "./components/ProductsSection";
 import Plants from "./components/Plants";
 import Pots from "./components/Pots";
 import Hangers from "./components/Hangers";
+import Products from "./components/Products";
 
 function App() {
   return (
@@ -30,7 +31,8 @@ function App() {
 
         <Switch>
           <Route path="/productos" exact>
-            <ProductsSections className="app__products" title="Productos" />
+            {/* <ProductsSections className="app__products" title="Productos" /> */}
+            <Products />
           </Route>
         </Switch>
 

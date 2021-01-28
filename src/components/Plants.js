@@ -1,11 +1,11 @@
 import React from "react";
 import ProductsItem from "./ProductsItem";
 
-function Plants({ className }) {
+function Plants({ className, type }) {
   return (
     <div className={`plants ${className}`}>
       <div className="plants__container">
-        <h1>Plantas</h1>
+        <h1>{type}</h1>
 
         <div className="plants__container-items">
           <ProductsItem

@@ -1,11 +1,11 @@
 import React from "react";
 import ProductsItem from "./ProductsItem";
 
-function Hangers({ className }) {
+function Hangers({ className, type }) {
   return (
     <div className={`hangers ${className}`}>
       <div className="hangers__container">
-        <h1>Colgantes</h1>
+        <h1>{type}</h1>
 
         <div className="hangers__container-items">
           <ProductsItem
