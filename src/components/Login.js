@@ -1,5 +1,3 @@
-import { Button, TextField } from "@material-ui/core";
-import SendIcon from "@material-ui/icons/Send";
 import React from "react";
 import { useState } from "react";
 import { auth } from "../firebase";
@@ -18,25 +16,18 @@ function Login() {
   return (
     <div className="login">
       <form>
-        <TextField
-          label="Correo"
-          variant="outlined"
+        <input
+          placeholder="Correo"
           onChange={(e) => setEmail(e.target.value)}
-        />
-        <TextField
-          label="Contraseña"
-          variant="outlined"
+          type="email"
+          name="email"
+        ></input>
+        <input
+          placeholder="Contraseña"
           onChange={(e) => setPassword(e.target.value)}
+          type="password"
         />
-        <Button
-          variant="contained"
-          color="secondary"
-          size="large"
-          endIcon={<SendIcon />}
-          onClick={login}
-        >
-          Entrar
-        </Button>
+        <button onClick={login}>Entrar</button>
       </form>
     </div>
   );

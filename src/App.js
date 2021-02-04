@@ -11,6 +11,7 @@ import Pots from "./components/Pots";
 import Hangers from "./components/Hangers";
 import Products from "./components/Products";
 import Login from "./components/Login";
+import Dashboard from "./components/dashboard/Dashboard";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -19,7 +20,6 @@ function App() {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
         setUser(authUser);
-        console.log(authUser);
       } else {
         setUser(null);
       }
@@ -37,7 +37,7 @@ function App() {
         <NavBar className="app__navBar" />
 
         <Switch>
-          <Route path="/auth">{!user ? <Login /> : <h1>Signed In</h1>}</Route>
+          <Route path="/auth">{!user ? <Login /> : <Dashboard />}</Route>
 
           <Route path="/" exact>
             <Homepage className="app__homepage" />

@@ -1,0 +1,17 @@
+.dashboard {
+  display: flex;
+  height: 70vh;
+
+  & button {
+    width: 100px;
+    height: 50px;
+    background-color: $golden;
+  }
+}
+
+.typesContainer {
+  flex: 0.3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
