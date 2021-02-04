@@ -1,0 +1,16 @@
+.login {
+  height: 70vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+
+  & form {
+    border: 1px solid lightgray;
+    padding: 30px;
+    height: 300px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

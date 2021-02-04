@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { auth } from "./firebase";
 import ContactBar from "./components/ContactBar";
 import NavBar from "./components/NavBar";
 import Homepage from "./components/Homepage";
@@ -8,8 +10,26 @@ import Plants from "./components/Plants";
 import Pots from "./components/Pots";
 import Hangers from "./components/Hangers";
 import Products from "./components/Products";
+import Login from "./components/Login";
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        setUser(authUser);
+        console.log(authUser);
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, [user]);
+
   return (
     <div className="app">
       <Router>
@@ -17,15 +37,17 @@ function App() {
         <NavBar className="app__navBar" />
 
         <Switch>
+          <Route path="/auth">{!user ? <Login /> : <h1>Signed In</h1>}</Route>
+
           <Route path="/" exact>
             <Homepage className="app__homepage" />
           </Route>
 
-          <Route path="/acerca" exact>
+          <Route path="/acerca">
             <About className="app__about" />
           </Route>
 
-          <Route path="/productos" exact>
+          <Route path="/productos">
             <Products />
           </Route>
 
