@@ -3,15 +3,52 @@
   height: 70vh;
 
   & button {
-    width: 100px;
     height: 50px;
-    background-color: $golden;
   }
 }
 
 .typesContainer {
-  flex: 0.3;
+  flex: 0.2;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.uploadContainer {
+  flex: 0.8;
+  padding: 50px;
+  border: 1px solid blue;
+}
+
+.uploadBox {
+  height: 100%;
+  display: flex;
+}
+
+.inputsContainer {
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  & .MuiFormControl-root {
+    width: 400px;
+  }
+}
+
+.uploadImage {
+  flex: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.MuiTabs-root {
+  height: 100%;
+}
+
+.MuiTabs-flexContainer {
+  height: 100%;
+  flex-direction: column;
 }
