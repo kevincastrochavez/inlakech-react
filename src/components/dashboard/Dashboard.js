@@ -11,11 +11,15 @@ import {
   PersonPinCircleOutlined,
   PhonelinkLockOutlined,
 } from "@material-ui/icons";
-import React, { useEffect } from "react";
-import { auth } from "../../firebase";
+import React, { useEffect, useState } from "react";
+import { auth, db } from "../../firebase";
 
 function Dashboard() {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
+  const [type, setType] = useState("");
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  const [description, setDescription] = useState("");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -24,8 +28,22 @@ function Dashboard() {
   useEffect(() => {
     const btns = Array.from(document.querySelectorAll(".MuiTab-root"));
     const btnActive = btns.find((btn) => btn.classList.length === 6);
-    console.log(btnActive.dataset.type);
+    setType(btnActive.dataset.type);
   }, [value]);
+
+  const postInfo = (e) => {
+    e.preventDefault();
+
+    db.collection(`${type}`).add({
+      nombre: name,
+      precio: price,
+      descripción: description,
+    });
+
+    setName("");
+    setPrice("");
+    setDescription("");
+  };
 
   return (
     <div className="dashboard">
@@ -59,9 +77,17 @@ function Dashboard() {
       <div className="uploadContainer">
         <div className="uploadBox">
           <div className="inputsContainer">
-            <TextField label="Nombre" variant="outlined" />
+            <TextField
+              label="Nombre"
+              variant="outlined"
+              onChange={(e) => setName(e.target.value)}
+            />
 
-            <FormControl fullWidth variant="outlined">
+            <FormControl
+              fullWidth
+              variant="outlined"
+              onChange={(e) => setPrice(e.target.value)}
+            >
               <InputLabel htmlFor="outlined-adornment-amount">
                 Precio
               </InputLabel>
@@ -79,6 +105,7 @@ function Dashboard() {
               multiline
               rows={4}
               variant="outlined"
+              onChange={(e) => setDescription(e.target.value)}
             />
           </div>
           <div className="uploadImage">
