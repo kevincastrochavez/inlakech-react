@@ -142,14 +142,20 @@ function Dashboard() {
               onChange={(e) => setDescription(e.target.value)}
             />
           </div>
-          <progress className="uploadImage" value={progress} max="100" />
-          <input
-            className="imageupload__select"
-            type="file"
-            onChange={handleChangeFile}
-          />
 
-          <button onClick={postInfo}>Enviar</button>
+          <div className="uploadContainerInfo">
+            <div className="uploadImage">
+              <input
+                className="imageupload__select"
+                type="file"
+                onChange={handleChangeFile}
+              />
+
+              <progress value={progress} max="100" />
+            </div>
+
+            <button onClick={postInfo}>Enviar</button>
+          </div>
         </div>
       </div>
 
