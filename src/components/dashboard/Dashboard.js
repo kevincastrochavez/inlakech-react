@@ -24,7 +24,7 @@ function Dashboard() {
   useEffect(() => {
     const btns = Array.from(document.querySelectorAll(".MuiTab-root"));
     const btnActive = btns.find((btn) => btn.classList.length === 6);
-    console.log(btnActive);
+    console.log(btnActive.dataset.type);
   }, [value]);
 
   return (
@@ -38,9 +38,21 @@ function Dashboard() {
           textColor="secondary"
           aria-label="icon label tabs example"
         >
-          <Tab icon={<PhonelinkLockOutlined />} label="PLANTAS" />
-          <Tab icon={<PhonelinkLockOutlined />} label="MACETAS" />
-          <Tab icon={<PersonPinCircleOutlined />} label="COLGANTES" />
+          <Tab
+            icon={<PhonelinkLockOutlined />}
+            label="PLANTAS"
+            data-type="plantas"
+          />
+          <Tab
+            icon={<PhonelinkLockOutlined />}
+            label="MACETAS"
+            data-type="macetas"
+          />
+          <Tab
+            icon={<PersonPinCircleOutlined />}
+            label="COLGANTES"
+            data-type="colgantes"
+          />
         </Tabs>
       </div>
 
