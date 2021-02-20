@@ -39,10 +39,6 @@ function Dashboard() {
       precio: price,
       descripción: description,
     });
-
-    setName("");
-    setPrice("");
-    setDescription("");
   };
 
   return (
@@ -59,17 +55,17 @@ function Dashboard() {
           <Tab
             icon={<PhonelinkLockOutlined />}
             label="PLANTAS"
-            data-type="plantas"
+            data-type="Plantas"
           />
           <Tab
             icon={<PhonelinkLockOutlined />}
             label="MACETAS"
-            data-type="macetas"
+            data-type="Macetas"
           />
           <Tab
             icon={<PersonPinCircleOutlined />}
             label="COLGANTES"
-            data-type="colgantes"
+            data-type="Colgantes"
           />
         </Tabs>
       </div>
@@ -110,6 +106,8 @@ function Dashboard() {
           </div>
           <div className="uploadImage">
             <img src="https://via.placeholder.com/50x50" alt="" />
+
+            <button onClick={postInfo}>Enviar</button>
           </div>
         </div>
       </div>
