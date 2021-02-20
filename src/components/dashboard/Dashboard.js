@@ -12,7 +12,8 @@ import {
   PhonelinkLockOutlined,
 } from "@material-ui/icons";
 import React, { useEffect, useState } from "react";
-import { auth, db } from "../../firebase";
+import firebase from "firebase";
+import { auth, db, storage } from "../../firebase";
 
 function Dashboard() {
   const [value, setValue] = useState(0);
@@ -20,6 +21,9 @@ function Dashboard() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
+  const [image, setImage] = useState(null);
+  const [url, setUrl] = useState("");
+  const [progress, setProgress] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -31,14 +35,48 @@ function Dashboard() {
     setType(btnActive.dataset.type);
   }, [value]);
 
+  const handleChangeFile = (e) => {
+    if (e.target.files[0]) {
+      setImage(e.target.files[0]);
+    }
+  };
+
   const postInfo = (e) => {
     e.preventDefault();
 
-    db.collection(`${type}`).add({
-      nombre: name,
-      precio: price,
-      descripción: description,
-    });
+    const uploadTask = storage.ref(`images/${image.name}`).put(image);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const progress = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
+        setProgress(progress);
+      },
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        storage
+          .ref("images")
+          .child(image.name)
+          .getDownloadURL()
+          .then((url) => {
+            setUrl(url);
+
+            db.collection(`${type}`).add({
+              nombre: name,
+              precio: price,
+              descripción: description,
+              imageUrl: url,
+              timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            });
+
+            setImage(null);
+            setProgress(0);
+          });
+      }
+    );
   };
 
   return (
@@ -104,11 +142,14 @@ function Dashboard() {
               onChange={(e) => setDescription(e.target.value)}
             />
           </div>
-          <div className="uploadImage">
-            <img src="https://via.placeholder.com/50x50" alt="" />
+          <progress className="uploadImage" value={progress} max="100" />
+          <input
+            className="imageupload__select"
+            type="file"
+            onChange={handleChangeFile}
+          />
 
-            <button onClick={postInfo}>Enviar</button>
-          </div>
+          <button onClick={postInfo}>Enviar</button>
         </div>
       </div>
 
