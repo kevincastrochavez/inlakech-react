@@ -16,6 +16,7 @@ import firebase from "firebase";
 import { auth, db, storage } from "../../firebase";
 
 function Dashboard() {
+  // Just a comment
   const [value, setValue] = useState(0);
   const [type, setType] = useState("");
   const [name, setName] = useState("");
